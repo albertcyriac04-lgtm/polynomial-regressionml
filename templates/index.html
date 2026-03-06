@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Polynomial Regression ML Model - Predict salary based on years of experience using machine learning">
+    <title>PolyPredict — Salary Prediction Engine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <!-- Animated background orbs -->
+    <div class="bg-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-brand">
+            <span class="brand-icon">◆</span>
+            <span class="brand-text">PolyPredict</span>
+        </div>
+        <div class="nav-badge">ML Powered</div>
+    </nav>
+
+    <!-- Hero Section -->
+    <main class="main-container">
+        <section class="hero" id="hero">
+            <div class="hero-content">
+                <div class="hero-tag">Polynomial Regression · Degree 3</div>
+                <h1 class="hero-title">
+                    Salary <span class="gradient-text">Prediction</span> Engine
+                </h1>
+                <p class="hero-subtitle">
+                    Leveraging machine learning to predict salary outcomes based on years of professional experience.
+                    Powered by scikit-learn polynomial regression.
+                </p>
+            </div>
+        </section>
+
+        <!-- Prediction Card -->
+        <section class="prediction-section" id="prediction-section">
+            <div class="glass-card prediction-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                        </svg>
+                    </div>
+                    <h2 class="card-title">Make a Prediction</h2>
+                    <p class="card-description">Enter years of experience to predict the expected salary</p>
+                </div>
+
+                <form id="predict-form" class="predict-form">
+                    <div class="input-group">
+                        <label for="experience-input" class="input-label">Years of Experience</label>
+                        <div class="input-wrapper">
+                            <input 
+                                type="number" 
+                                id="experience-input" 
+                                name="experience"
+                                min="0" 
+                                max="50" 
+                                step="0.5" 
+                                placeholder="e.g. 5"
+                                required
+                                autocomplete="off"
+                            >
+                            <span class="input-unit">years</span>
+                        </div>
+                        <div class="input-range">
+                            <span>0</span>
+                            <input type="range" id="experience-slider" min="0" max="30" step="0.5" value="5">
+                            <span>30</span>
+                        </div>
+                    </div>
+                    <button type="submit" id="predict-btn" class="btn-predict">
+                        <span class="btn-text">Predict Salary</span>
+                        <span class="btn-loader" style="display:none;">
+                            <svg class="spinner" viewBox="0 0 24 24" width="20" height="20">
+                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="3" fill="none" stroke-dasharray="31.4 31.4" stroke-linecap="round"/>
+                            </svg>
+                        </span>
+                        <span class="btn-arrow">→</span>
+                    </button>
+                </form>
+
+                <!-- Result Display -->
+                <div id="result-container" class="result-container" style="display:none;">
+                    <div class="result-divider"></div>
+                    <div class="result-content">
+                        <div class="result-label">Predicted Annual Salary</div>
+                        <div class="result-value" id="result-value">$0</div>
+                        <div class="result-meta" id="result-meta"></div>
+                    </div>
+                </div>
+
+                <!-- Error Display -->
+                <div id="error-container" class="error-container" style="display:none;">
+                    <div class="error-icon">⚠</div>
+                    <p class="error-text" id="error-text"></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Info Cards -->
+        <section class="info-section" id="info-section">
+            <div class="glass-card info-card">
+                <div class="info-icon">📊</div>
+                <h3>Data Driven</h3>
+                <p>Trained on real-world salary data with experience ranging from 1 to 20 years</p>
+            </div>
+            <div class="glass-card info-card">
+                <div class="info-icon">🧠</div>
+                <h3>Polynomial Fit</h3>
+                <p>Degree-3 polynomial captures non-linear salary growth patterns accurately</p>
+            </div>
+            <div class="glass-card info-card">
+                <div class="info-icon">⚡</div>
+                <h3>Instant Results</h3>
+                <p>Real-time predictions powered by a pre-trained scikit-learn pipeline</p>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Built with Flask & scikit-learn · Polynomial Regression ML Project</p>
+        </footer>
+    </main>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
