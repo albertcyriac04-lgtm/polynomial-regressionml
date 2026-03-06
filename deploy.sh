@@ -52,7 +52,7 @@ echo "[7/7] Starting Gunicorn server..."
 echo ""
 echo "============================================="
 echo " Application is starting on port 5000"
-echo " Access: http://<your-ec2-public-ip>:5000"
+echo " Access: http://44.210.100.50:5000"
 echo "============================================="
 
 # Kill any existing gunicorn processes
