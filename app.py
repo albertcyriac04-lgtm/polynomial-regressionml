@@ -23,6 +23,8 @@ def load_model():
         print(f"WARNING: Model file not found at {MODEL_PATH}")
         print("Run 'python train.py' first to generate the model.")
 
+# Load model immediately when module is imported (e.g., by Gunicorn)
+load_model()
 
 @app.route("/")
 def index():
@@ -56,5 +58,4 @@ def predict():
 
 
 if __name__ == "__main__":
-    load_model()
     app.run(host="0.0.0.0", port=5000, debug=True)
