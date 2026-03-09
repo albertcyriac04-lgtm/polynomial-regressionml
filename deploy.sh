@@ -52,7 +52,8 @@ echo "[7/7] Starting Gunicorn server..."
 echo ""
 echo "============================================="
 echo " Application is starting on port 5000"
-echo " Access: http://44.210.100.50:5000"
+PUBLIC_IP=$(curl -s http://169.254.169.254/latest/meta-data/public-ipv4 || echo "YOUR_INSTANCE_IP")
+echo " Access: http://${PUBLIC_IP}:5000"
 echo "============================================="
 
 # Kill any existing gunicorn processes
